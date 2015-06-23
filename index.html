@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Andy Ybarra Portfolio Site</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +29,25 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style type="text/css">
+    html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwTKiOFHt4Z2-lhhBeBnQGT_-c0bvclqo">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: { lat: -34.397, lng: 150.644},
+                zoom: 8
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script src="//use.typekit.net/zit2iak.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body id="page-top" class="index">
@@ -44,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Andy Ybarra</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,9 +95,9 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Start Bootstrap</span>
+                        <span class="name">Andy Ybarra</span>
                         <hr class="star-light">
-                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                        <span class="skills">Mobile Application Developer - Backend Developer</span>
                     </div>
                 </div>
             </div>
@@ -125,6 +144,7 @@
                         <img src="img/portfolio/circus.png" class="img-responsive" alt="">
                     </a>
                 </div>
+
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -142,7 +162,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/ibm-smarter-planet.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -156,6 +176,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -170,21 +191,46 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>-USC Alum. BS CECS 2013</p>
+<!--
+                    <div class="col-lg-5">
+                        <img class="img-responsive" src="img/usc_logo.jpg" alt="">
+                    </div>
+-->
+                    <p>-CS Master's student at Georgia Tech</p>
+<!--
+                    <div class="col-lg-5">
+                        <img class="img-responsive" src="img/gatech_logo.gif" alt="">
+                    </div>
+-->
                 </div>
-                <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                <div class="col-lg-4" id="test_box">
+                    <p>Previously interned with:</p>
+                    <div class="col-lg-8">
+                        <img class="img-responsive" src="img/Triforce-padded.png" alt="">
+                    </div>
                 </div>
+<!--
+                <div>
+                   <a data-pin-do="embedPin" href="http://www.pinterest.com/pin/ARb0EHt4ZiLsw_lf727f-YYZ9McEKf2575YQw3hF1pg0pRR2cdML4aU/"></a>
+                         Please call pinit.js only once per page
+                   <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+                </div>
+-->
+
+<!--
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download Theme
                     </a>
                 </div>
+-->
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
+
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -195,8 +241,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+<!--                     To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+<!--                     The form should work on most web servers, but if the form is not working you may need to configure your web server differently.-->
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -246,25 +292,31 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                        <p>North Ave NW<br>Atlanta, GA 30332</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="http://www.linkedin.com/in/andyybarra" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://github.com/aybarra" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="https://github.gatech.edu/aybarra3" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/andy.ybarra" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="http://instagram.com/4ndrasta/" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://www.pinterest.com/amjy25/" target="_blank" class="btn-social btn-outline"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.behance.net/aybarra/wip" target="_blank" class="btn-social btn-outline"><i class="fa fa-behance"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -279,7 +331,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        Copyright &copy; Andy Ybarra 2015
                     </div>
                 </div>
             </div>
@@ -306,21 +358,19 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Cache</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>Mobile application and web service intented to connect hosts of spare space and students requiring storage of their belongings<br>
+                            </p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong>Began August 2014 and is ongoing</a>
                                     </strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li>Technology Used:
+                                    <strong>
+                                            Android application development, PHP backend, Google App Engine for GCM notifications, Web Development using JQuery Mobile</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -454,17 +504,17 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Concierge</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="img/portfolio/ibm-smarter-planet.png" class="img-responsive img-centered" alt="">
+                            <p>IBM Build a Smarter Planet Mobile Application Challenge</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">Summer 2012</a>
                                     </strong>
                                 </li>
                                 <li>Service:
