@@ -29,25 +29,30 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style type="text/css">
-    html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwTKiOFHt4Z2-lhhBeBnQGT_-c0bvclqo">
-    </script>
-    <script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: { lat: -34.397, lng: 150.644},
-                zoom: 8
-            };
-            var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
     <script src="//use.typekit.net/zit2iak.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
+
+<!--
+    <script>
+       var callback = function() {
+          grecaptcha.render('id-of-render-element', {
+             'sitekey': '6LfDeRUTAAAAAATMpvMsbMLIhY2L6RG5-J9TsLM8',
+             'expired-callback': expCallback,
+             'data-callback': verifyCallback
+           });
+       };
+       var expCallback = function() {
+          $('#sendEmailBtn').disabled = true;
+          grecaptcha.reset();
+       };
+       var verifyCallback = function( response ) {
+          $('#sendEmailBtn').removeAttr('disabled');
+       };
+
+    </script>
+-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='js/recaptcha.js' type="text/javascript"></script>
 </head>
 
 <body id="page-top" class="index">
@@ -97,7 +102,7 @@
                     <div class="intro-text">
                         <span class="name">Andy Ybarra</span>
                         <hr class="star-light">
-                        <span class="skills">Mobile Application Developer - Backend Developer</span>
+                        <span class="skills">{Mobile Application Developer, Backend Developer}</span>
                     </div>
                 </div>
             </div>
@@ -109,7 +114,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
+                    <h2>Portfolio (Modals under construction)</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -121,7 +126,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/fantasy-football.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -141,7 +146,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/cache-box.png" class="img-responsive" alt="">
                     </a>
                 </div>
 
@@ -152,7 +157,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/uml-icon.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -172,7 +177,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/pencil-icon.png" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -190,41 +195,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>-USC Alum. BS CECS 2013</p>
-<!--
-                    <div class="col-lg-5">
-                        <img class="img-responsive" src="img/usc_logo.jpg" alt="">
-                    </div>
--->
-                    <p>-CS Master's student at Georgia Tech</p>
-<!--
-                    <div class="col-lg-5">
-                        <img class="img-responsive" src="img/gatech_logo.gif" alt="">
-                    </div>
--->
+                <div class="col-lg-12 text-center"> <!-- col-lg-offset-2"> -->
+                    <iframe src="//voice.adobe.com/a/39gOj/embed/" width="960" height="540" frameborder="0" allowfullscreen></iframe>
                 </div>
+<!--
                 <div class="col-lg-4" id="test_box">
                     <p>Previously interned with:</p>
                     <div class="col-lg-8">
                         <img class="img-responsive" src="img/Triforce-padded.png" alt="">
                     </div>
                 </div>
-<!--
-                <div>
-                   <a data-pin-do="embedPin" href="http://www.pinterest.com/pin/ARb0EHt4ZiLsw_lf727f-YYZ9McEKf2575YQw3hF1pg0pRR2cdML4aU/"></a>
-                         Please call pinit.js only once per page
-                   <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-                </div>
 -->
-
-<!--
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
-                    </a>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Previously interned with:</p>
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <img class="img-responsive" src="img/Triforce-padded.png" alt="">
+                    </div>
                 </div>
--->
             </div>
         </div>
     </section>
@@ -273,10 +262,13 @@
                             </div>
                         </div>
                         <br>
+
+                        <div class="g-recaptcha" data-sitekey="6LfDeRUTAAAAAATMpvMsbMLIhY2L6RG5-J9TsLM8" data-callback="verifyCallback" data-expired-callback="expiredCallback"></div>
+                        <br>
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                <button id="sendEmailBtn" type="submit" class="btn btn-success btn-lg" disabled>Send</button>
                             </div>
                         </div>
                     </form>
@@ -307,8 +299,15 @@
                                 <a href="https://github.gatech.edu/aybarra3" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                             <li>
+                                <a href="http://careers.stackoverflow.com/cv/employer/337142" target="_blank" class="btn-social btn-outline"><i class="fa fa-stack-overflow"></i></a>
+                            </li>
+                        </ul>
+<!--
+                            <li>
                                 <a href="https://www.facebook.com/andy.ybarra" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
+-->
+                        <ul class="list-inline">
                             <li>
                                 <a href="http://instagram.com/4ndrasta/" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
                             </li>
@@ -358,20 +357,23 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Cache</h2>
+                            <h2>Fantasy Football Visualization</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Mobile application and web service intented to connect hosts of spare space and students requiring storage of their belongings<br>
+                            <img src="img/portfolio/visualization.png" class="img-responsive img-centered" alt="">
+                            <p>Dashboard visualization depicting aggregated cumulative fantasy football statistics for all offensive players from NFL history past and present<br>
                             </p>
                             <ul class="list-inline item-details">
                                 <li>Date:
-                                    <strong>Began August 2014 and is ongoing</a>
+                                    <strong>Began September 2015 and is ongoing</a>
                                     </strong>
                                 </li>
-                                <li>Technology Used:
-                                    <strong>
-                                            Android application development, PHP backend, Google App Engine for GCM notifications, Web Development using JQuery Mobile</a>
+
+                                <li>Technology Used:<br>
+                                    <strong>Backend: Django REST framework, Frontend: D3.js, Scraping: ScraPy, pandas
                                     </strong>
+                                </li>
+                                <li>Github to frontend and backend repos found
+                                    <a href="https://github.gatech.edu/CS7450FantasyFootball"><u>here</u></a>
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -403,11 +405,12 @@
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">Spring semester 2015 for CS7631</a>
+                                    <strong><a href="http://startbootstrap.com">Spring semester 2015 for CS7631: Automonous Multi-robot Systems</a>
                                     </strong>
                                 </li>
                                 <li>Technology Used:
-                                    <strong>Utilized 3D Python environment provided for previous assignments</a>
+                                    <strong>Utilized 3D Python environment provided for previous assignments
+                                    <br>Optimized the rendering process using Multiprocessing library in spare time....shortens the time to render a 2 minute video at 5fps from upwards of 40 minutes to roughly 6 minutes.
                                     </strong>
                                 </li>
                                 <li>Icon Credit:
@@ -434,21 +437,29 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Cache</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="img/portfolio/cache-arch.png" class="img-responsive img-centered" alt="">
+                            <p>Mobile application and web service intented to connect hosts of spare space and students requiring storage of their belongings<br>
+                            </p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong>Began August 2014 and is ongoing</a>
                                     </strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li>Technology Used:
+                                    <strong>
+                                            Android application development, PHP backend, Google App Engine for GCM notifications, Mobile-Web frontend using JQuery Mobile</a>
+                                    </strong>
+                                </li>
+                                <li>Github for frontend and backend repos found:
+                                    <strong>
+                                        <a href="https://github.gatech.edu/summerstorage"><u>here</u></a>
+                                    </strong>
+                                </li>
+                                <li>Github for Android project migrated to Android Studio found:
+                                    <strong>
+                                        <a href="https://github.gatech.edu/aybarra3/cache"><u>here</u></a>
                                     </strong>
                                 </li>
                             </ul>
@@ -471,21 +482,26 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Gesture based UML Application for Android</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="img/portfolio/uml-app.png" class="img-responsive img-centered" alt="">
+
+                            <p></p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Technology used:
+                                    <strong>Android Studio, the app itself was targeted for Android version 4.1 Jellybean. Tested using two rented tablets: (Nexus 7 2013 and Asus Transformer Pad Infinity) from Georgia Tech's App Lab.
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong>Began September 2015 and concluded December 2015</a>
                                     </strong>
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <li>Final write up found:
+                                    <strong><a href="https://onedrive.live.com/view.aspx?cid=266c1e392fd03b5b&page=view&resid=266C1E392FD03B5B!147&parId=266C1E392FD03B5B!103&app=Word"><u>here</u></a>
+                                    </strong>
+                                </li>
+                                <li>Github for the project found:
+                                    <strong><a href="https://github.com/aybarra/CS6456Project"><u>here</u></a>
                                     </strong>
                                 </li>
                             </ul>
@@ -511,18 +527,18 @@
                             <h2>Concierge</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/ibm-smarter-planet.png" class="img-responsive img-centered" alt="">
-                            <p>IBM Build a Smarter Planet Mobile Application Challenge</p>
+                            <p>IBM Build a Smarter Planet Mobile Application Challenge: Created an Android application demonstrating the proof of concept for a service my team and I coined, "Concierge": a scheduling application intended to reduce wait times by providing optimal schedules to users based on historical and user provided status for various attractions and locales. Our submission was awarded third prize in the app challenge out of 58 entries</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Technology used:
+                                    <strong>Simple PHP backend, Application targeted for Android Gingerbread
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">Summer 2012</a>
+                                    <strong>Summer 2012
                                     </strong>
                                 </li>
                                 <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    <strong>Web Development
                                     </strong>
                                 </li>
                             </ul>
@@ -547,21 +563,105 @@
                         <div class="modal-body">
                             <h2>Drawings: Digital and Paper</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+<!--                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">-->
+
+<!--                            <img src="img/portfolio/hands-drawing-hands.png" class="img-responsive img-centered" alt="">-->
+
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                              <!-- Indicators -->
+                              <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                <li data-target="#myCarousel" data-slide-to="4"></li>
+                                <li data-target="#myCarousel" data-slide-to="5"></li>
+                                <li data-target="#myCarousel" data-slide-to="6"></li>
+                              </ol>
+
+                              <!-- Wrapper for slides -->
+                              <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                  <img src="img/portfolio/hands-drawing-hands.png" class="img-responsive img-centered" alt="">
+                                    <div class="carousel-caption">
+                                        <h4>Modern adaptation of M. C. Escher's Drawing Hands</h4>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/khaleesi-watercolor.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+                                      <h4>Khaleesi Tracing and Watercolor</h4>
+                                      <p>Trying out Adobe Sketch's watercolor brushes</p>
+                                  </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/flamenco-dancer.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+                                      <h4>Flamenco Dancer</h4>
+                                  </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/phoenix.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+                                      <h4>Health Careers High School Mascot T-shirt Idea</h4>
+                                      <p>Inspired by a comment that my advisor said, "...maybe just have the Phoenix rip a strand of DNA apart and have it say WE PLAY GOD"</p>
+                                  </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/hand-holding-cube.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+
+                                  </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/scribble.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+
+                                  </div>
+                                </div>
+
+                                <div class="item">
+                                  <img src="img/portfolio/guitar-pick-flower.png" class="img-responsive img-centered" alt="">
+                                  <div class="carousel-caption">
+
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Left and right controls -->
+                              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </div>
+
+
                             <ul class="list-inline item-details">
+<!--
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+-->
+                                <li>
+                                    <strong>Drawing is something I do to relax. The tools have become more advanced over the past 10ish years, but drawing/tracing/painting still remains special.
                                     </strong>
                                 </li>
+<!--
                                 <li>Service:
                                     <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
+-->
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -570,6 +670,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
